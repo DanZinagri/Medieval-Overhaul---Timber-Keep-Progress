@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Every bulk timber recipe built on Medieval Overhaul's DankPyon_MakeTimberBase with a fixed product:
+	     MO's plain and dark timber bills and Biomes! Caverns' mushroom timber. Matched on 20+ logs per bill,
+	     so the x2 bills (half a second of work) stay as they are. MO's "any wood" bills are left out on
+	     purpose: they have no products (specialProducts Butchery), and UnfinishedThing's label reads
+	     products[0]. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RecipeDef[@ParentName="DankPyon_MakeTimberBase"][ingredients/li/count &gt;= 20][products/*]</xpath>
+		<value>
+			<unfinishedThingDef>MOTKP_UnfinishedTimber</unfinishedThingDef>
+		</value>
+	</Operation>
+
+</Patch>
